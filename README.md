@@ -9,7 +9,6 @@ Just a pet project to learn a bit more about :
     * Pandas
     * Flask 
     * pytest
-* TDD
 * Ansible
 * ...
 
