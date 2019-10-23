@@ -2,19 +2,11 @@ import requests
 import json
 import time
 from datetime import date
-from pymongo import MongoClient
 
 
 def get_details_job(job_id):
     res = requests.get('https://nofluffjobs.com/api/posting/{0}'.format(job_id))
     return json.loads(res.text)
-
-
-def connect_mongodb():
-    client = MongoClient('localhost', 27017)
-    db = client.nofluff
-    collection = db.jobs
-    return collection
 
 
 class Scraper:
@@ -44,8 +36,5 @@ class Scraper:
                 print('{0} - {1}'.format(i, job_id))
                 time.sleep(10.4)
 
-    def initial_load_in_mongodb(self):
-        collection = connect_mongodb()
-        for job in self.jobs_details:
-            collection.insert_one(job)
-
+    def get_new_jobs_only(self, new_jobs_ids):
+        pass
