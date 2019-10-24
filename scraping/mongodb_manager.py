@@ -14,8 +14,8 @@ class MongodbManager:
 
     def get_list_existing_jobs_ids(self):
         collection = self.connect_to_nofluff().jobs
-        ids = collection.find({}).distinct()
-        return ids
+        ids = collection.find({}).distinct('id')
+        return set(ids)
 
     def load_in_mongodb(self, jobs_details):
         collection = self.connect_to_nofluff().jobs
@@ -25,7 +25,7 @@ class MongodbManager:
     def clean_jobs(self):
         pass
 
-    def compare_jobs(self):
+    def compare_jobs_ids(self):
         pass
 
     def archive_jobs(self):
