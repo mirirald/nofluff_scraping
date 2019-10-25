@@ -1,0 +1,185 @@
+{
+  "_id": "5dacba7004872f0dbc765847",
+  "company": {
+    "name": "Harvey Nash Technology",
+    "size": "100+",
+    "url": "",
+    "additionalContactEmails": [],
+    "logo": "/upload/posting/Harvey_Nash_Technology_20180614_150920.png",
+    "consentsInfo": {
+      "termsAndConditions": true,
+      "marketingInfo": false
+    }
+  },
+  "consents": {
+    "infoClause": "The Controller of your personal data is Harvey Nash Technology, with registered office at Chmielna 85/87, 00-805 Warsaw. Your data is processed for the purpose of the current recruitment process. Providing data is voluntary but necessary for this purpose. Processing your data is lawful because it is necessary in order to take steps at the request of the data subject prior to entering into a contract (article 6 point 1b of Regulation EU 2016/679 - GDPR). Your personal data will be deleted when the current recruitment process is finished, unless a separate consent is provided below. You have the right to access, correct, modify, update, rectify, request for the transfer or deletion of data, withdrawal of consent or objection.",
+    "personalDataRequestLink": "dpo@harveynash.com"
+  },
+  "id": "AHLTAFOD",
+  "basics": {
+    "category": "frontend",
+    "technology": "react",
+    "seniority": [
+      "Senior",
+      "Mid"
+    ]
+  },
+  "requirements": {
+    "musts": [
+      {
+        "value": "React",
+        "type": "main"
+      },
+      {
+        "value": "English",
+        "type": "other"
+      },
+      {
+        "value": "Communication skills",
+        "type": "other"
+      }
+    ],
+    "nices": [
+      {
+        "value": "JavaScript",
+        "type": "main"
+      },
+      {
+        "value": "Angular",
+        "type": "main"
+      },
+      {
+        "value": "REST",
+        "type": "main"
+      },
+      {
+        "value": "TypeScript",
+        "type": "main"
+      },
+      {
+        "value": "node",
+        "type": "main"
+      }
+    ]
+  },
+  "details": {
+    "description": "Delivery of User Interfaces working with the best modern technologies.",
+    "quote": "Working with best modern technologies on a global scale, clear career development plans. ",
+    "quoteAuthor": "",
+    "avatarPhoto": null
+  },
+  "methodology": [
+    {
+      "values": [],
+      "name": "Unit tests"
+    },
+    {
+      "values": [
+        "Agile"
+      ],
+      "name": "Agile management"
+    },
+    {
+      "values": [],
+      "name": "Knowledge repository"
+    },
+    {
+      "values": [
+        "true"
+      ],
+      "name": "Engineering new solutions"
+    }
+  ],
+  "specs": {
+    "dailyTasks": [],
+    "details": {
+      "custom": [],
+      "flexibleHours": true,
+      "chooseTools": true
+    },
+    "travelling": "none",
+    "workProfile": {
+      "type": "mainlyFeatures"
+    }
+  },
+  "essentials": {
+    "contract": {
+      "start": "ASAP",
+      "duration": {}
+    },
+    "salary": {
+      "types": {
+        "permanent": {
+          "period": "Month",
+          "range": [
+            15000,
+            21000
+          ],
+          "paidHoliday": true
+        }
+      },
+      "currency": "PLN",
+      "bonus": null
+    }
+  },
+  "location": {
+    "places": [
+      {
+        "country": {
+          "code": "POL",
+          "name": "Poland"
+        },
+        "city": "Warsaw",
+        "street": "Rondo Daszyńskiego",
+        "postalCode": "00-869",
+        "geoLocation": {
+          "latitude": 52.23006239999999,
+          "longitude": 20.984583
+        }
+      }
+    ],
+    "remote": 1,
+    "multicityCount": 3
+  },
+  "benefits": {
+    "benefits": [
+      "Sport subscription",
+      "Training budget",
+      "Private healthcare",
+      "Lunch card",
+      "International projects",
+      "flexible working hours",
+      "Event subscription"
+    ],
+    "officePerks": [
+      "Free coffee",
+      "Modern office"
+    ],
+    "equipment": {
+      "operatingSystems": {
+        "lin": true,
+        "mac": true,
+        "win": true
+      },
+      "computer": "Up to you",
+      "monitors": "If needed"
+    }
+  },
+  "title": "Frontend Developer",
+  "posted": "1571246827544",
+  "status": "PUBLISHED",
+  "postingUrl": "frontend-developer-harvey-nash-technology-warsaw-ahltafod",
+  "regions": [
+    "pl"
+  ],
+  "meta": {
+    "videosInCompanyProfileVisible": false
+  },
+  "likes": 0,
+  "companyUrl": "/company/harvey-nash-technology-f6bzlth9",
+  "seo": {
+    "title": "Frontend Developer @ Harvey Nash Technology",
+    "description": "Frontend Developer @ Harvey Nash Technology Warsaw POL 15.0k-21.0k (UoP) PLN / month",
+    "image": "/upload/facebook/Harvey_Nash_Technology_20180614_150920.png"
+  }
+}
