@@ -1,0 +1,62 @@
+{
+  "_id": "5dacba7004872f0dbc765847",
+  "company": {
+    "name": "Harvey Nash Technology",
+    "size": "100+"
+  },
+  "id": "AHLTAFOD",
+  "basics": {
+    "category": "frontend",
+    "technology": "react",
+    "seniority": [
+      "Senior",
+      "Mid"
+    ]
+  },
+  "requirements": {
+    "musts": [
+      "React",
+      "English",
+      "Communication skills"
+    ],
+    "nices": [
+      "JavaScript",
+      "Angular",
+      "REST",
+      "TypeScript",
+      "node"
+    ]
+  },
+  "description": "Delivery of User Interfaces working with the best modern technologies.",
+  "salary": {
+    "types": {
+      "permanent": {
+        "period": "Month",
+        "range": [
+          15000,
+          21000
+        ],
+        "paidHoliday": true
+      }
+    },
+    "currency": "PLN",
+    "bonus": null
+  },
+  "location": {
+    "country": "Poland",
+    "city": "Warsaw",
+    "remote": 1
+  },
+  "benefits": [
+    "Sport subscription",
+    "Training budget",
+    "Private healthcare",
+    "Lunch card",
+    "International projects",
+    "flexible working hours",
+    "Event subscription",
+    "Free coffee",
+    "Modern office"
+  ],
+  "status": "PUBLISHED"
+}
