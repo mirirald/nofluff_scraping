@@ -39,5 +39,3 @@ class Scraper:
                 time.sleep(10.4)
         return jobs_details
 
-    def get_new_jobs_only(self, new_jobs_ids):
-        pass
