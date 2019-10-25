@@ -1,6 +1,13 @@
 from pymongo import MongoClient
 
 
+# compare two sets and send back a list with :
+# [0] = More on Mongodb => to be archived
+# [1] = More on nofluff => to be added to Mongodb
+def compare_jobs_ids(ids_nofluff, ids_mongodb):
+    return [ids_mongodb.difference(ids_nofluff), ids_nofluff.difference(ids_mongodb)]
+
+
 class MongodbManager:
 
     def __init__(self, host, port):
@@ -22,12 +29,11 @@ class MongodbManager:
         for job in jobs_details:
             collection.insert_one(job)
 
+    # might do this before putting in db
     def clean_jobs(self):
         pass
 
-    def compare_jobs_ids(self):
-        pass
-
+    # change status from PUBLISHED to ARCHIVED
     def archive_jobs(self):
         pass
 
