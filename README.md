@@ -16,8 +16,8 @@ Just a pet project to learn a bit more about :
 And by the same occasion on IT jobs polish market
 
 ## TODO
-- [ ] Scrap data with Python using the API of nofluffjobs
-- [ ] Store data parsed from JSON in a persistent DB
+- [X] Scrap data with Python using the API of nofluffjobs
+- [X] Store data parsed from JSON in a persistent DB
 - [ ] Clean & analyse data 
 - [ ] Show the result in a cute web UI
 
