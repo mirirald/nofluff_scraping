@@ -29,12 +29,9 @@ class MongodbManager:
         for job in jobs_details:
             collection.insert_one(job)
 
-    # might do this before putting in db
-    def clean_jobs(self):
-        pass
-
     # change status from PUBLISHED to ARCHIVED
-    def archive_jobs(self):
-        pass
+    def archive_job(self, id_to_update):
+        collection = self.connect_to_nofluff().jobs
+        collection.update_one({'id': id_to_update}, {"$set": {"status": "ARCHIVED"}}, upsert=False)
 
 
