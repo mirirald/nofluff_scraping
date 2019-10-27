@@ -1,40 +1,59 @@
 from scraping.mongodb_manager import *
+from scraping.scraper import *
+import pymongo
+from bson.objectid import ObjectId
 
 client = MongodbManager('localhost', 27017)
+scraper = Scraper()
 
-json_job = client.connect_to_nofluff().jobs.find_one()
+# UPDATE to put in a method/function
+ids_mongodb = client.get_list_existing_jobs_ids()
 
-# print(json_job['basics']['seniority'])
+coll = client.connect_to_nofluff().jobs_clean
 
-clean_json_job = dict()
-clean_json_job["company"] = dict([
-    ("name", json_job["company"]["name"]),
-    ("size", json_job["company"]["size"])
-])
-clean_json_job["id"] = json_job["id"]
-clean_json_job["basics"] = dict([
-    ("category", json_job["basics"]["category"]),
-    ("technology", json_job["basics"]["technology"]),
-    ("seniority", json_job["basics"]["seniority"])
-])
-clean_json_job["requirements"] = dict([
-    ("musts", [item["value"] for item in json_job["requirements"]["musts"]]),
-    ("nices", [item["value"] for item in json_job["requirements"]["nices"]])
-])
-clean_json_job["description"] = json_job["details"]["description"]
-clean_json_job["salary"] = json_job["essentials"]["salary"]
-clean_json_job["location"] = dict([
-    ("country", json_job["location"]["places"][0]["country"]["name"]),
-    ("city", json_job["location"]["places"][0]["city"]),
-    ("remote", json_job["location"]["remote"])
-])
-clean_json_job["benefits"] = json_job["benefits"]["benefits"]
-clean_json_job["benefits"] = clean_json_job["benefits"] + json_job["benefits"]["officePerks"]
-clean_json_job["status"] = json_job["status"]
+ids_nofluff = get_list_unique_ids(scraper.get_raw_list_all_jobs())
 
-print(clean_json_job)
 
-id_to_update = 'AHLTAFOD'
-collection = client.connect_to_nofluff().jobs
-collection.update_one({'id': id_to_update}, {"$set": {"status": "ARCHIVED"}}, upsert=False)
+ids_compared = compare_jobs_ids(ids_nofluff, ids_mongodb)
+
+print(ids_compared[0])
+print(ids_compared[1])
+
+# for item in ids_compared[0]:
+#     client.archive_job(item)
+#
+# jobs_details = scraper.get_jobs_details(ids_compared[1])
+#
+# client.load_multiple_in_mongodb(jobs_details)
+
+################
+
+# Dealing with duplicates
+#
+# cursor = coll.aggregate(
+#     [
+#         {"$group": {"_id": "$id", "unique_ids": {"$addToSet": "$_id"}, "count": {"$sum": 1}}},
+#         {"$match": {"count": {"$gte": 2}}}
+#     ]
+# )
+
+# for item in cursor:
+#     print(item)
+#     coll.delete_one({'_id': ObjectId(item['unique_ids'][0])})
+
+# print(cursor)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
