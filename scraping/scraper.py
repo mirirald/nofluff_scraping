@@ -27,7 +27,6 @@ def clean_job(json_job):
         ("musts", [item["value"] for item in json_job["requirements"]["musts"]]),
         ("nices", [item["value"] for item in json_job["requirements"]["nices"]])
     ])
-    clean_json_job["description"] = json_job["details"]["description"]
     clean_json_job["salary"] = json_job["essentials"]["salary"]
     clean_json_job["location"] = dict([
         ("country", json_job["location"]["places"][0]["country"]["name"]),
