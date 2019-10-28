@@ -36,6 +36,8 @@ def clean_job(json_job):
     clean_json_job["benefits"] = json_job["benefits"]["benefits"]
     clean_json_job["benefits"] = clean_json_job["benefits"] + json_job["benefits"]["officePerks"]
     clean_json_job["status"] = json_job["status"]
+    clean_json_job["dateAdded"] = str(date.today())
+    clean_json_job["dateArchived"] = None
 
     return clean_json_job
 
@@ -45,7 +47,6 @@ class Scraper:
     def __init__(self):
         self.url_jobs = 'https://nofluffjobs.com/api/search/posting?region=pl'
         self.url_job = 'https://nofluffjobs.com/api/posting/'
-        self.date = date.today()
 
     def get_raw_list_all_jobs(self):
         response = requests.get(self.url_jobs)
