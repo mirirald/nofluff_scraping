@@ -18,7 +18,8 @@ And by the same occasion on IT jobs polish market
 ## TODO
 - [X] Scrap data with Python using the API of nofluffjobs
 - [X] Store data parsed from JSON in a persistent DB
-- [ ] Clean & analyse data 
+- [X] Clean data
+- [ ] Analyse data
 - [ ] Show the result in a cute web UI
 
 ## Disclaimer 
