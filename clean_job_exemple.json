@@ -57,5 +57,7 @@
     "Free coffee",
     "Modern office"
   ],
-  "status": "PUBLISHED"
+  "status": "PUBLISHED",
+  "dateAdded": "2019-10-28",
+  "dateArchived": null
 }
