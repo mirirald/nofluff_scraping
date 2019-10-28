@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from datetime import date
 
 
 # compare two sets and send back a list with :
@@ -14,6 +15,7 @@ class MongodbManager:
         self.host = host
         self.port = port
         self.client = MongoClient(host, port)
+        self.collection = self.connect_to_nofluff().jobs_clean
 
     def connect_to_nofluff(self):
         db = self.client.nofluff
@@ -21,22 +23,20 @@ class MongodbManager:
 
     # will only show jobs not archived
     def get_list_existing_jobs_ids(self):
-        collection = self.connect_to_nofluff().jobs_clean
-        ids = collection.find({'status': {'$ne': 'ARCHIVED'}}).distinct('id')
+        ids = self.collection.find({'status': {'$ne': 'ARCHIVED'}}).distinct('id')
         return set(ids)
 
     def load_one_in_mongodb(self, job_details):
-        collection = self.connect_to_nofluff().jobs_clean
-        collection.insert_one(job_details)
+        self.collection.insert_one(job_details)
 
     def load_multiple_in_mongodb(self, jobs_details):
-        collection = self.connect_to_nofluff().jobs_clean
         for job in jobs_details:
-            collection.insert_one(job)
+            self.collection.insert_one(job)
 
     # change status from PUBLISHED to ARCHIVED
     def archive_job(self, id_to_update):
-        collection = self.connect_to_nofluff().jobs_clean
-        collection.update_one({'id': id_to_update}, {"$set": {"status": "ARCHIVED"}}, upsert=False)
+        self.collection.update_one({'id': id_to_update},
+                              {"$set": {"status": "ARCHIVED", "dateArchived": str(date.today())}}, upsert=False)
+
 
 
